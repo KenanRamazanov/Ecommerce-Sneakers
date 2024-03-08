@@ -1,3 +1,5 @@
 <template>
-<h1>Kenan's blog</h1>
+<div class="">
+    <h1>Ramazanov Blog</h1>
+</div>
 </template>
