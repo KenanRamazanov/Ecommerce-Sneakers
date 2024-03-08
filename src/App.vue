@@ -3,7 +3,11 @@
 
 <header>
     <div>
-        
+        <img src="/logo.png" alt="Logo">
+        <div>
+            <h2>Vue Sneakers</h2>
+            <p>Ən yaxşı idman ayaqqabısı mağazası</p>
+        </div>
     </div>
 </header>
 
