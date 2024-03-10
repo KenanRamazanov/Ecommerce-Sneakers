@@ -1,5 +1,5 @@
 <template>
-    <div class="relative m-10 border border-slate-100 rounded-3xl p-8 cursor-pointer  hover:-translate-y-2 hover:shadow-xl transition ">
+    <div class="relative border border-slate-100 rounded-3xl p-8 cursor-pointer  hover:-translate-y-2 hover:shadow-xl transition ">
         <img src="/like-2.svg" alt="Like 2" class="absolute top-8 left-8" />
         <img src="/sneakers/sneakers-1.jpg" alt="Sneakers" />
         <p class="mt-2">Men's Nike Blazer Mid Suede</p>
