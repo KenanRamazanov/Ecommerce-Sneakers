@@ -7,16 +7,20 @@ import Card from './components/Card.vue'
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header />
 
-    <h2 class="text-3xl font-bold">All Sneakers</h2>
+    <div class="p-10">
+      <h2 class="text-3xl font-bold mb-8">All Sneakers</h2>
 
-    <div>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <div class="grid grid-cols-4 gap-5">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+
+      </div>
     </div>
   </div>
 </template>
