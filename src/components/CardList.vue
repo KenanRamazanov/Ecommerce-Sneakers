@@ -1,5 +1,10 @@
 <script setup>
 import Card from "./Card.vue";
+
+
+const onClickAdd = () => {
+    alert("Elave olundu")
+}
 </script>
 
 <template>
@@ -8,7 +13,9 @@ import Card from "./Card.vue";
     title="Men's Nike Blazer Mid Suede"
      imageUrl="/sneakers/sneakers-1.jpg" 
      :price="142.99"
-     :isAdded="true"
+  
+     :isFavorite="true"
+     :onClickAdd="onClickAdd"
      />
     <Card />
     <Card />
