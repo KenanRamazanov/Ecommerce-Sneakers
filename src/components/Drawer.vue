@@ -1,5 +1,5 @@
 <script setup>
-import CardList from './CardList.vue';
+import CartItem from './CartItem.vue';
 </script>
 
 <template>
@@ -35,7 +35,7 @@ import CardList from './CardList.vue';
     </h2>
     <div class="flex flex-col flex-1 justify-between">
       <div class="flex flex-col gap-5">
-        <CardList
+        <CartItem
           title="Мужские Кроссовки Nike Blazer Mid Suede"
           price="1000"
           img="/sneakers/sneakers-1.jpg"
