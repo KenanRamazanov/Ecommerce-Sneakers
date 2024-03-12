@@ -5,7 +5,7 @@ import CartItem from './CartItem.vue'
 <template>
   <div class="fixed z-10 top-0 h-full w-full bg-black opacity-70" />
   <div
-    class="flex flex-col justify-between fixed h-full z-10 top-0 h-full right-0 w-96 bg-white px-10 py-7"
+    class="flex flex-col justify-between fixed h-full z-10 top-0  right-0 w-96 bg-white px-10 py-7"
   >
     <h2 class="text-2xl font-bold mb-10 flex items-center gap-5">
       <svg
