@@ -3,8 +3,8 @@ defineProps({
   img: String,
   title: String,
   price: Number,
-  onClickDelete: Function,
-});
+  onClickDelete: Function
+})
 </script>
 
 <template>
