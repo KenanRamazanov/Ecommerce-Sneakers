@@ -14,6 +14,13 @@ import Drawer from './components/Drawer.vue'
     <div class="p-10">
      <div class="flex justify-between">
       <h2 class="text-3xl font-bold mb-8">All Sneakers</h2>
+      <select
+      class="py-2 px-3 border border-gray-200 focus:border-gray-400 rounded-md focus:outline-none"
+    >
+      <option value="name">By name</option>
+      <option value="price">By price (cheap)</option>
+      <option value="price">By price (expensive)</option>
+    </select>
         <div class="relative">
           <img 
           class="absolute left-4 top-3" 
