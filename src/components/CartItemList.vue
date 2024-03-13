@@ -1,5 +1,5 @@
 <script setup>
-import CardItem from "./CardItem.vue";
+import CartItem from './CartItem.vue';
 
 
 const onClickAdd = () => {
@@ -9,7 +9,7 @@ const onClickAdd = () => {
 
 <template>
   <div class="grid grid-cols-4 gap-5">
-    <CardItem 
+    <CartItem 
     title="Men's Nike Blazer Mid Suede"
      imageUrl="/sneakers/sneakers-1.jpg" 
      :price="142.99"
