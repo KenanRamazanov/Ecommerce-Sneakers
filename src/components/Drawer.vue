@@ -9,5 +9,31 @@ import CartItemList from './CartItemList.vue'
     <DrawerHead />
 
     <CartItemList />
+    <CartItemList />
+    <CartItemList />
+    <CartItemList />
+
+
+    <div class="flex flex-col gap-4 mt-7">
+      <div class="flex gap-2">
+        <span>Total:</span>
+        <div class="flex-1 border-b border-dashed"></div>
+        <b>571.96</b>
+      </div>
+
+      <div class="flex gap-2">
+        <span>Tax 5%:</span>
+        <div class="flex-1 border-b border-dashed"></div>
+        <b>19.99$</b>
+      </div>
+
+      <button
+        class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:bg-lime-700 cursor-pointer"
+      >
+      Place an order
+      </button>
+    </div>
+
+
   </div>
 </template>
