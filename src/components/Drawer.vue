@@ -11,7 +11,6 @@ import CartItemList from './CartItemList.vue'
     <CartItemList />
   
 
-
     <div class="flex flex-col gap-4 mt-7">
       <div class="flex gap-2">
         <span>Total:</span>
