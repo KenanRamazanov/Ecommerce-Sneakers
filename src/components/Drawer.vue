@@ -9,9 +9,7 @@ import CartItemList from './CartItemList.vue'
     <DrawerHead />
 
     <CartItemList />
-    <CartItemList />
-    <CartItemList />
-    <CartItemList />
+  
 
 
     <div class="flex flex-col gap-4 mt-7">
@@ -28,7 +26,8 @@ import CartItemList from './CartItemList.vue'
       </div>
 
       <button
-        class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:bg-lime-700 cursor-pointer"
+      disabled=""
+        class="mt-4 transition bg-lime-500 w-full rounded-xl py-3  text-white disabled:bg-slate-300 hover:bg-lime-600 active:bg-lime-700 cursor-pointer"
       >
       Place an order
       </button>

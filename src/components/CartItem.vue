@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="relative flex  w-full border border-slate-200 rounded-xl p-4 gap-4">
     <img src="/sneakers/sneakers-1.jpg" class="w-16 h-16" alt="Sneaker" />
