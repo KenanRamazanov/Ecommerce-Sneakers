@@ -1,6 +1,10 @@
 <script setup>
 import Card from "./Card.vue";
 
+defineProps({
+  items: Array,
+  isFavorites: Boolean
+})
 
 const onClickAdd = () => {
     alert("Elave olundu")
