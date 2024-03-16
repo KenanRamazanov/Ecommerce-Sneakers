@@ -4,7 +4,7 @@ import CardList from './components/CardList.vue'
 import Drawer from './components/Drawer.vue'
 
 const items = [
-  [
+  
     {
         "id": 1,
         "title": "Men's Nike Blazer Mid Suede Sneakers",
@@ -546,7 +546,7 @@ const items = [
     }
 ]
 
-]
+
 </script>
 
 <template>
