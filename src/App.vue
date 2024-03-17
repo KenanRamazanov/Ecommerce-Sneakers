@@ -4,15 +4,15 @@ import axios from 'axios';
 import Header from './components/Header.vue'
 import CardList from './components/CardList.vue'
 import Drawer from './components/Drawer.vue'
-import { data } from 'autoprefixer';
+
 
 onMounted(async() => {
  try {
- const data = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items');
+ const {data} = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items');
 
  console.log(data);
- } catch  (e) {
-
+ } catch  (err) {
+  console.log(err);
  }
 
 
