@@ -1,23 +1,39 @@
 <script setup>
-import { onMounted } from 'vue';
-import axios from 'axios';
+import { onMounted, ref, watch } from 'vue'
+import axios from 'axios'
 import Header from './components/Header.vue'
 import CardList from './components/CardList.vue'
 import Drawer from './components/Drawer.vue'
 
+const items = ref([])
 
-onMounted(async() => {
- try {
- const {data} = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items');
+const sortBy = ref('');
+const searchQuery = ref('');
 
- console.log(data);
- } catch  (err) {
-  console.log(err);
- }
+const onChangeSelect = (event) => {
+  console.log( event.target.value);
+}
 
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items')
+    items.value = data
+  } catch (err) {
+    console.log(err)
+  }
+});
 
-})
-
+watch(
+  sortBy, async () => {
+    try {
+    const { data } = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items?sortBy=' + sortBy.value
+    )
+    items.value = data
+  } catch (err) {
+    console.log(err)
+  }
+  
+  });
 
 </script>
 
@@ -30,7 +46,7 @@ onMounted(async() => {
       <div class="flex justify-between items-center">
         <h2 class="text-3xl font-bold mb-8">All Sneakers</h2>
         <div class="flex items-center gap-4">
-          <select
+          <select @change="onChangeSelect"
             class="py-2 px-3 border border-gray-200 focus:border-gray-400 rounded-md focus:outline-none"
           >
             <option value="name">By name</option>
