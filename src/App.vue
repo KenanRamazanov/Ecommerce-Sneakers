@@ -51,7 +51,7 @@ watch(
           >
             <option value="name">By name</option>
             <option value="price">By price (cheap)</option>
-            <option value="price">By price (expensive)</option>
+            <option value="+price">By price (expensive)</option>
           </select>
           <div class="relative">
             <img class="absolute left-4 top-3" src="/search.svg" />
