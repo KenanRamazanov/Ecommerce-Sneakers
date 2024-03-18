@@ -7,11 +7,11 @@ import Drawer from './components/Drawer.vue'
 
 const items = ref([])
 
-const sortBy = ref('');
-const searchQuery = ref('');
+const sortBy = ref('')
+const searchQuery = ref('')
 
 const onChangeSelect = (event) => {
-  console.log( event.target.value);
+  console.log(event.target.value)
 }
 
 onMounted(async () => {
@@ -21,20 +21,18 @@ onMounted(async () => {
   } catch (err) {
     console.log(err)
   }
-});
+})
 
-watch(
-  sortBy, async () => {
-    try {
-    const { data } = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items?sortBy=' + sortBy.value
+watch(sortBy, async () => {
+  try {
+    const { data } = await axios.get(
+      'https://0a55ea9c38d5267b.mokky.dev/items?sortBy=' + sortBy.value
     )
     items.value = data
   } catch (err) {
     console.log(err)
   }
-  
-  });
-
+})
 </script>
 
 <template>
@@ -46,7 +44,8 @@ watch(
       <div class="flex justify-between items-center">
         <h2 class="text-3xl font-bold mb-8">All Sneakers</h2>
         <div class="flex items-center gap-4">
-          <select @change="onChangeSelect"
+          <select
+            @change="onChangeSelect"
             class="py-2 px-3 border border-gray-200 focus:border-gray-400 rounded-md focus:outline-none"
           >
             <option value="name">By name</option>

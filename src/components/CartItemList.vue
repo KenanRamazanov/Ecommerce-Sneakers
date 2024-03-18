@@ -1,12 +1,10 @@
 <script setup>
-import CartItem from './CartItem.vue';
-
+import CartItem from './CartItem.vue'
 </script>
 
 <template>
-    <div class="flex flex-col flex-1 gap-4 justify-between">
+  <div class="flex flex-col flex-1 gap-4 justify-between">
     <CartItem />
     <CartItem />
-
   </div>
 </template>
