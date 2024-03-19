@@ -11,7 +11,7 @@ const sortBy = ref('')
 const searchQuery = ref('')
 
 const onChangeSelect = (event) => {
-  console.log(event.target.value)
+ sortBy.value = event.target.value
 }
 
 onMounted(async () => {
