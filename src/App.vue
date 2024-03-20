@@ -19,6 +19,15 @@ const onChangeSelect = (event) => {
 
 const fetchItems = async () => {
   try {
+
+    const params = {
+      sortBy: filters.sortBy
+    }
+
+    if (filters.searchQuery) {
+      params.title = `*${filters.searchQuery}*`
+    }
+
     const { data } = await axios.get(
       'https://0a55ea9c38d5267b.mokky.dev/items?sortBy=' + filters.sortBy
     )
@@ -28,15 +37,7 @@ const fetchItems = async () => {
   }
 }
 
-onMounted(async () => {
-  try {
-    const { data } = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items')
-    items.value = data
-  } catch (err) {
-    console.log(err)
-  }
-})
-
+onMounted(fetchItems)
 watch(filters, fetchItems)
 </script>
 
