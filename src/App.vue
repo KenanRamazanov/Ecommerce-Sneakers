@@ -17,6 +17,10 @@ const onChangeSelect = (event) => {
  filters.sortBy = event.target.value
 }
 
+const onChangeSearchInput = (event) => {
+  filters.searchQuery = event.target.value
+}
+
 const fetchItems = async () => {
   try {
 
@@ -29,7 +33,10 @@ const fetchItems = async () => {
     }
 
     const { data } = await axios.get(
-      'https://0a55ea9c38d5267b.mokky.dev/items?sortBy=' + filters.sortBy
+      'https://0a55ea9c38d5267b.mokky.dev/items',
+      {
+      params
+      }
     )
     items.value = data
   } catch (err) {
@@ -61,6 +68,7 @@ watch(filters, fetchItems)
           <div class="relative">
             <img class="absolute left-4 top-3" src="/search.svg" />
             <input
+            @input="onChangeSearchInput"
               class="border border-gray-200 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:border-gray-400"
               placeholder="Search"
               type="text"
