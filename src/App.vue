@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from './components/Header.vue'
 import CardList from './components/CardList.vue'
 import Drawer from './components/Drawer.vue'
+import { data } from 'autoprefixer'
 
 const items = ref([])
 
@@ -23,21 +24,9 @@ const onChangeSearchInput = (event) => {
 
 const fetchFavorites = async () => {
   try {
-    const { data: favorites } = await axios.get(`https://0a55ea9c38d5267b.mokky.dev/favorites`)
+    const { data } = await axios.get(`https://0a55ea9c38d5267b.mokky.dev/favorites`)
 
-    items.value = items.value.map((item) => {
-      const favorite = favorites.find((favorite) => favorite.item_id === item.id)
-
-      if (!favorite) {
-        return item
-      }
-
-      return {
-        ...item,
-        isFavorite: true,
-        favoriteId: favorite.id
-      }
-    })
+   items.value = data
   } catch (err) {
     console.log(err)
   }
@@ -60,7 +49,12 @@ const fetchItems = async () => {
       params
       }
     )
-    items.value = data
+    items.value = data.map((obj) => ({
+      ...obj,
+      isFavorite: false,
+      favoriteId: null,
+      isAdded: false
+    }))
   } catch (err) {
     console.log(err)
   }
