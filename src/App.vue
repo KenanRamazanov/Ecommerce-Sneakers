@@ -44,6 +44,29 @@ const fetchFavorites = async () => {
   }
 }
 
+
+const addToFavorite = async (item) => {
+  try {
+    if (!item.isFavorite) {
+      const obj = {
+        item_id: item.id
+      }
+
+      item.isFavorite = true
+
+      const { data } = await axios.post(`https://0a55ea9c38d5267b.mokky.dev/favorites`, obj)
+
+      item.favoriteId = data.id
+    } else {
+      item.isFavorite = false
+      await axios.delete(`https://0a55ea9c38d5267b.mokky.dev/favorites/${item.favoriteId}`)
+      item.favoriteId = null
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 const fetchItems = async () => {
   try {
 
