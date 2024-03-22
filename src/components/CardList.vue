@@ -13,14 +13,6 @@ const onClickAdd = () => {
 
 const addToFavorite = inject('addToFavorite')
 
-const onClickFavorites = () => {
-  const obj = {
-    ...props,
-    parentId: props.id
-  }
-
-  addToFavorite(obj)
-}
 </script>
 
 <template>
