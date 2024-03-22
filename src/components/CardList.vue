@@ -1,4 +1,5 @@
 <script setup>
+import { inject } from 'vue';
 import Card from './Card.vue'
 
 defineProps({
@@ -8,6 +9,17 @@ defineProps({
 
 const onClickAdd = () => {
   alert('Elave olundu')
+}
+
+const addToFavorite = inject('addToFavorite')
+
+const onClickFavorites = () => {
+  const obj = {
+    ...props,
+    parentId: props.id
+  }
+
+  addToFavorite(obj)
 }
 </script>
 
