@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, reactive, ref, watch } from 'vue'
+import { onMounted, provide, reactive, ref, watch } from 'vue'
 import axios from 'axios'
 import Header from './components/Header.vue'
 import CardList from './components/CardList.vue'
@@ -100,6 +100,8 @@ onMounted(async() => {
   await fetchFavorites();
 })
 watch(filters, fetchItems)
+
+provide('addToFavorite',addToFavorite)
 </script>
 
 <template>
