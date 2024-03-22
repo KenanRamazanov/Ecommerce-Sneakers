@@ -33,6 +33,7 @@ const onClickFavorites = () => {
       :imageUrl="item.imageUrl"
       :price="item.price"
       :onClickAdd="onClickAdd"
+      :onClickFavorite="addToFavorite(item)"
       :isFavorite="item.isFavorite"
     />
   </div>
