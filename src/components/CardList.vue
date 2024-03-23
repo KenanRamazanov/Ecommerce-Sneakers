@@ -4,7 +4,8 @@ import Card from './Card.vue'
 
 defineProps({
   items: Array,
-  isFavorites: Boolean
+  isFavorites: Boolean,
+  addToFavorite: Function,
 })
 
 const onClickAdd = () => {
