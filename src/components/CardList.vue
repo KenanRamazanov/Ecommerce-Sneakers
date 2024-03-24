@@ -1,18 +1,15 @@
 <script setup>
-import { inject } from 'vue';
 import Card from './Card.vue'
 
 defineProps({
   items: Array,
   isFavorites: Boolean,
-  addToFavorite: Function,
 })
 
 const onClickAdd = () => {
   alert('Elave olundu')
 }
 
-const addToFavorite = inject('addToFavorite')
 
 </script>
 
