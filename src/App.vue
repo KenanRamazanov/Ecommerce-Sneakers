@@ -4,7 +4,6 @@ import axios from 'axios'
 import Header from './components/Header.vue'
 import CardList from './components/CardList.vue'
 import Drawer from './components/Drawer.vue'
-import { data } from 'autoprefixer'
 
 const items = ref([])
 
