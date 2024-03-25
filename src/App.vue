@@ -7,6 +7,9 @@ import Drawer from './components/Drawer.vue'
 
 const items = ref([])
 
+
+const drawerOpen = ref(false)
+
 const filters = reactive({
   sortBy: 'title',
   searchQuery: ''
@@ -98,7 +101,7 @@ provide('addToFavorite', addToFavorite)
 </script>
 
 <template>
-  <!-- <Drawer/> -->
+  <Drawer v-if="drawerOpen" />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header />
 
