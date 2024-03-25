@@ -8,7 +8,12 @@ import Drawer from './components/Drawer.vue'
 const items = ref([])
 
 
-const drawerOpen = ref(false)
+const drawerOpen = ref(true)
+
+const closeDrawer = () => {
+  drawerOpen.value = false
+}
+
 
 const filters = reactive({
   sortBy: 'title',
