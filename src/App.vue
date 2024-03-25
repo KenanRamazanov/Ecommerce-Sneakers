@@ -12,9 +12,8 @@ const filters = reactive({
   searchQuery: ''
 })
 
-
 const onChangeSelect = (event) => {
- filters.sortBy = event.target.value
+  filters.sortBy = event.target.value
 }
 
 const onChangeSearchInput = (event) => {
@@ -43,7 +42,6 @@ const fetchFavorites = async () => {
   }
 }
 
-
 const addToFavorite = async (item) => {
   try {
     if (!item.isFavorite) {
@@ -68,7 +66,6 @@ const addToFavorite = async (item) => {
 
 const fetchItems = async () => {
   try {
-
     const params = {
       sortBy: filters.sortBy
     }
@@ -77,12 +74,9 @@ const fetchItems = async () => {
       params.title = `*${filters.searchQuery}*`
     }
 
-    const { data } = await axios.get(
-      'https://0a55ea9c38d5267b.mokky.dev/items',
-      {
+    const { data } = await axios.get('https://0a55ea9c38d5267b.mokky.dev/items', {
       params
-      }
-    )
+    })
     items.value = data.map((obj) => ({
       ...obj,
       isFavorite: false,
@@ -94,13 +88,13 @@ const fetchItems = async () => {
   }
 }
 
-onMounted(async() => {
-  await fetchItems();
-  await fetchFavorites();
+onMounted(async () => {
+  await fetchItems()
+  await fetchFavorites()
 })
 watch(filters, fetchItems)
 
-provide('addToFavorite',addToFavorite)
+provide('addToFavorite', addToFavorite)
 </script>
 
 <template>
@@ -123,7 +117,7 @@ provide('addToFavorite',addToFavorite)
           <div class="relative">
             <img class="absolute left-4 top-3" src="/search.svg" />
             <input
-            @input="onChangeSearchInput"
+              @input="onChangeSearchInput"
               class="border border-gray-200 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:border-gray-400"
               placeholder="Search"
               type="text"
@@ -132,7 +126,7 @@ provide('addToFavorite',addToFavorite)
         </div>
       </div>
 
-      <CardList :items="items" @add-to-favorite="addToFavorite"  />
+      <CardList :items="items" @add-to-favorite="addToFavorite" />
     </div>
   </div>
 </template>
