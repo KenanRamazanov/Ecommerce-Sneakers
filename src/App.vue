@@ -106,7 +106,10 @@ onMounted(async () => {
 })
 watch(filters, fetchItems)
 
-provide('addToFavorite', addToFavorite)
+provide('cartActions', {
+  closeDrawer,
+  openDrawer,
+})
 </script>
 
 <template>
