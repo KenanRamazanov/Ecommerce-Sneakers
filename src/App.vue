@@ -115,7 +115,7 @@ provide('cartActions', {
 <template>
   <Drawer v-if="drawerOpen" />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
-    <Header />
+    <Header @open-drawer="openDrawer" />
 
     <div class="p-10">
       <div class="flex justify-between items-center">
