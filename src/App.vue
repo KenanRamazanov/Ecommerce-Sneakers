@@ -14,6 +14,10 @@ const closeDrawer = () => {
   drawerOpen.value = false
 }
 
+const openDrawer = () => {
+  drawerOpen.value = true
+}
+
 
 const filters = reactive({
   sortBy: 'title',
