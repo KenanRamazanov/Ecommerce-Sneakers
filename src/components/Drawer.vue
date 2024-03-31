@@ -15,13 +15,13 @@ import CartItemList from './CartItemList.vue'
       <div class="flex gap-2">
         <span>Total:</span>
         <div class="flex-1 border-b border-dashed"></div>
-        <b>571.96</b>
+        <b>12990 ₽</b>
       </div>
 
       <div class="flex gap-2">
         <span>Tax 5%:</span>
         <div class="flex-1 border-b border-dashed"></div>
-        <b>19.99 руб</b>
+        <b>900 ₽</b>
       </div>
 
       <button
