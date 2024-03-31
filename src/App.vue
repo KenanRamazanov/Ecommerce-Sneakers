@@ -6,7 +6,7 @@ import CardList from './components/CardList.vue'
 import Drawer from './components/Drawer.vue'
 
 const items = ref([])
-
+const cart = ref([])
 
 const drawerOpen = ref(true)
 
@@ -17,7 +17,10 @@ const closeDrawer = () => {
 const openDrawer = () => {
   drawerOpen.value = true
 }
-
+const addToCart = (item) => {
+  cart.value.push(item)
+  item.isAdded = true
+}
 
 const filters = reactive({
   sortBy: 'title',
@@ -141,7 +144,7 @@ provide('cartActions', {
         </div>
       </div>
 
-      <CardList :items="items" @add-to-favorite="addToFavorite" />
+      <CardList :items="items" @add-to-favorite="addToFavorite" @add-to-cart="addToCart" />
     </div>
   </div>
 </template>
