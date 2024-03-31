@@ -18,8 +18,14 @@ const openDrawer = () => {
   drawerOpen.value = true
 }
 const addToCart = (item) => {
+ if(!item.isAdded) {
   cart.value.push(item)
   item.isAdded = true
+ } else {
+  cart.value.splice(cart.value.indexOf(item), 1)
+  item.isAdded = false
+ }
+  console.log(cart)
 }
 
 const filters = reactive({
