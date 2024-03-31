@@ -22,7 +22,7 @@ const emit = defineEmits(['openDrawer'])
       @click="() => emit('openDrawer')"
       class="flex items-center gap-3 cursor-pointer text-gray-500 hover:text-black">
         <img src="/cart.svg" alt="Cart" />
-        <b>1205 usd</b>
+        <b> {{totalPrice}} руб</b>
       </li>
       <li class="flex items-center gap-3 cursor-pointer text-gray-500 hover:text-black">
         <img src="/heart.svg" alt="Favorite" />
