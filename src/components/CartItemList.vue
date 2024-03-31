@@ -2,7 +2,10 @@
 import { inject } from 'vue'
 import CartItem from './CartItem.vue'
 
-const { cart } = inject('cart')
+const { cart, removeFromCart } = inject('cart')
+
+
+
 </script>
 
 <template>
