@@ -30,6 +30,19 @@ const removeFromCart = (item) => {
   item.isAdded = false
 }
 
+
+const createOrder = () => {
+  try {
+    const {data} =  await axios.post(`https://0a55ea9c38d5267b.mokky.dev/orders`, {
+      items: cart,
+    totalPrice: totalPrice.value,
+    })
+    return data;
+  } catch (err) {
+     console.log(err)
+  }
+}
+
 const onClickAddPlus = (item) => {
   if (!item.isAdded) {
     addToCart(item)
