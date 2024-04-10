@@ -31,12 +31,15 @@ const removeFromCart = (item) => {
 }
 
 
-const createOrder = () => {
+const createOrder = async () => {
   try {
     const {data} =  await axios.post(`https://0a55ea9c38d5267b.mokky.dev/orders`, {
       items: cart,
     totalPrice: totalPrice.value,
     })
+
+    cart.value = []
+
     return data;
   } catch (err) {
      console.log(err)
@@ -148,7 +151,7 @@ provide('cart', {
 </script>
 
 <template>
-  <Drawer :total-price="totalPrice" v-if="drawerOpen" :vat-price="vatPrice" />
+  <Drawer :total-price="totalPrice" v-if="drawerOpen" :vat-price="vatPrice" @createOrder="createOrder" />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
 
