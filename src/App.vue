@@ -13,6 +13,11 @@ const drawerOpen = ref(true)
 const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.price, 0))
 const vatPrice = computed(() => Math.round((totalPrice.value * 5) / 100))
 
+
+const cartIsEmpty = computed(() => cart.value.length === 0)
+
+const cartbuttonDisabled =  computed(() => isCreatingOrder.value || cartIsEmpty.value)
+
 const closeDrawer = () => {
   drawerOpen.value = false
 }
@@ -143,6 +148,14 @@ onMounted(async () => {
 })
 watch(filters, fetchItems)
 
+watch (
+  cart, () => {
+  items.value = items.value.map((item) => ({
+    ...item,
+    isAdded:false
+  }))
+  }
+);
 provide('cart', {
   cart,
   closeDrawer,
@@ -158,7 +171,7 @@ provide('cart', {
     v-if="drawerOpen"
     :vat-price="vatPrice"
     @createOrder="createOrder"
-    is-creating-order="isCreatingOrder"
+    :button-Disabled="cartbuttonDisabled"
   />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />

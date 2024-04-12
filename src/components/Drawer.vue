@@ -2,15 +2,14 @@
 import DrawerHead from './DrawerHead.vue'
 import CartItemList from './CartItemList.vue'
 
-import { computed } from 'vue';
 const emit = defineEmits('createOrder')
-const props = defineProps({
+defineProps({
   totalPrice: Number,
   vatPrice: Number,
-  isCreatingOrder: Boolean
+  buttonDisabled: Boolean
 })
 
-const buttonDisabled = computed(() => props.isCreatingOrder.value ? true : props.totalPrice ? false: true );
+
 </script>
 
 <template>
