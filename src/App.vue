@@ -7,7 +7,7 @@ import Drawer from './components/Drawer.vue'
 
 const items = ref([])
 const cart = ref([])
-
+const isCreatingOrder = ref(false)
 const drawerOpen = ref(true)
 
 const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.price, 0))
@@ -30,19 +30,21 @@ const removeFromCart = (item) => {
   item.isAdded = false
 }
 
-
 const createOrder = async () => {
   try {
-    const {data} =  await axios.post(`https://0a55ea9c38d5267b.mokky.dev/orders`, {
+    isCreatingOrder.value = true
+    const { data } = await axios.post(`https://0a55ea9c38d5267b.mokky.dev/orders`, {
       items: cart.value,
-    totalPrice: totalPrice.value,
+      totalPrice: totalPrice.value
     })
 
     cart.value = []
 
-    return data;
+    return data
   } catch (err) {
-     console.log(err)
+    console.log(err)
+  } finally {
+    isCreatingOrder.value = false
   }
 }
 
@@ -151,7 +153,13 @@ provide('cart', {
 </script>
 
 <template>
-  <Drawer :total-price="totalPrice" v-if="drawerOpen" :vat-price="vatPrice" @createOrder="createOrder" />
+  <Drawer
+    :total-price="totalPrice"
+    v-if="drawerOpen"
+    :vat-price="vatPrice"
+    @createOrder="createOrder"
+    is-creating-order="isCreatingOrder"
+  />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
 

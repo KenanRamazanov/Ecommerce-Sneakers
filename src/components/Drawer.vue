@@ -4,9 +4,10 @@ import CartItemList from './CartItemList.vue'
 
 
 const emit = defineEmits('createOrder')
-const props = defineProps({
+defineProps({
   totalPrice: Number,
-  vatPrice: Number
+  vatPrice: Number,
+  isCreatingOrder: Boolean
 })
 </script>
 
