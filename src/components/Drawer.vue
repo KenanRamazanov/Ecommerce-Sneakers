@@ -16,14 +16,15 @@ defineProps({
     <DrawerHead />
 
     <InfoBlock
+    v-if="!totalPrice"
       title="Корзина пустая"
       description="Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ."
       image-url="/package-icon.png"
     />
 
-    <CartItemList />
+    <CartItemList v-if="totalPrice" />
 
-    <div class="flex flex-col gap-4 mt-7">
+    <div v-if="totalPrice" class="flex flex-col gap-4 mt-7">
       <div class="flex gap-2">
         <span>Total:</span>
         <div class="flex-1 border-b border-dashed"></div>
