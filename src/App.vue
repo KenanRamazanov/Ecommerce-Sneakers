@@ -143,6 +143,9 @@ const fetchItems = async () => {
 }
 
 onMounted(async () => {
+  const localCart = localStorage.getItem('cart');
+  cart.value = localCart ? JSON.parse(localCart) : [];
+
   await fetchItems()
   await fetchFavorites()
 })
@@ -156,6 +159,16 @@ watch (
   }))
   }
 );
+
+watch(
+  cart,
+  () => {
+    localStorage.setItem('cart', JSON.stringify(cart.value))
+  },
+  { deep: true }
+)
+
+
 provide('cart', {
   cart,
   closeDrawer,

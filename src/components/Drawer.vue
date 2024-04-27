@@ -24,9 +24,11 @@ defineProps({
     />
     </div>
 
-    <CartItemList v-if="totalPrice" />
 
-    <div v-if="totalPrice" class="flex flex-col gap-4 mt-7">
+    <div v-else>
+      <CartItemList  />
+
+    <div class="flex flex-col gap-4 mt-7">
       <div class="flex gap-2">
         <span>Total:</span>
         <div class="flex-1 border-b border-dashed"></div>
@@ -46,6 +48,7 @@ defineProps({
       >
         Place an order
       </button>
+    </div>
     </div>
   </div>
 </template>
