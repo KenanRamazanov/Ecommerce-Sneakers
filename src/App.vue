@@ -2,13 +2,14 @@
 import { provide,ref, watch, computed } from 'vue'
 import axios from 'axios'
 import Header from './components/Header.vue'
-
+import Home from './pages/Home.vue'
 import Drawer from './components/Drawer.vue'
 
+// Drawer //
 
 const cart = ref([])
 const isCreatingOrder = ref(false)
-const drawerOpen = ref(true)
+const drawerOpen = ref(false)
 
 const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.price, 0))
 const vatPrice = computed(() => Math.round((totalPrice.value * 5) / 100))
@@ -52,7 +53,7 @@ const createOrder = async () => {
     isCreatingOrder.value = false
   }
 }
-
+// Drawer //
 
 
 watch(
@@ -85,7 +86,7 @@ provide('cart', {
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
 
     <div class="p-10">
-      
+      <Home/>
     </div>
   </div>
 </template>
