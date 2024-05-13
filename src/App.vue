@@ -2,7 +2,6 @@
 import { provide,ref, watch, computed } from 'vue'
 import axios from 'axios'
 import Header from './components/Header.vue'
-import Home from './pages/Home.vue'
 import Drawer from './components/Drawer.vue'
 
 // Drawer //
